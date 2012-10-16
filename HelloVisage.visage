@@ -1,0 +1,59 @@
+package visage.javafx;
+
+import visage.animation.Interpolator;
+import visage.animation.Timeline;
+import visage.javafx.geometry.Rectangle2D;
+import visage.javafx.stage.Stage;
+import visage.javafx.scene.Group;
+import visage.javafx.scene.Scene;
+import visage.javafx.scene.control.Button;
+import visage.javafx.scene.image.Image;
+import visage.javafx.scene.image.ImageView;
+import visage.javafx.scene.text.Text;
+import visage.javafx.scene.shape.Rectangle;
+
+//var position = 100;
+
+/*Timeline {
+    at (10s) {position => 150 tween Interpolator.LINEAR}
+}.play();*/
+
+Stage {
+    title: "Login"
+    Scene {
+        width: 500
+        height: 400
+        fill: Color.WHITE
+         def visage = Image { url: "{__DIR__}Visage1.jpg" }
+         def jugc = Image { url: "{__DIR__}jugc.png" }
+        Group {
+            [
+            ImageView {
+                visage
+                fitWidth: 305
+                preserveRatio: true
+                layoutY: 300
+                layoutX:180
+            }
+           Text{text:"Username:" x: 127 y: 96 }
+           Text{text:"Password:" x: 135 y: 150 }
+            Button {
+                text: "Login"
+                layoutX: 236
+                layoutY: 200
+                /*layoutX: bind position
+                layoutY: bind 80 + position*/
+            }
+
+             ImageView {
+                jugc
+                fitWidth: 150
+                fitHeight:150
+                preserveRatio: true
+                layoutY:240
+            }
+            
+            ]
+        }
+    }
+}
