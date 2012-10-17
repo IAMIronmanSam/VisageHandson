@@ -6,12 +6,15 @@ import visage.javafx.geometry.Rectangle2D;
 import visage.javafx.stage.Stage;
 import visage.javafx.scene.Group;
 import visage.javafx.scene.Scene;
+import visage.javafx.scene.effect.*;
 import visage.javafx.scene.control.Button;
+import visage.javafx.scene.control.Label;
+import visage.javafx.scene.control.TextField;
 import visage.javafx.scene.image.Image;
 import visage.javafx.scene.image.ImageView;
-import visage.javafx.scene.text.Text;
+import visage.javafx.scene.text.*;
 import visage.javafx.scene.shape.Rectangle;
-
+import visage.lang.Color.*;
 //var position = 100;
 
 /*Timeline {
@@ -28,15 +31,54 @@ Stage {
          def jugc = Image { url: "{__DIR__}jugc.png" }
         Group {
             [
-            ImageView {
-                visage
-                fitWidth: 305
-                preserveRatio: true
-                layoutY: 300
-                layoutX:180
-            }
-           Text{text:"Username:" x: 127 y: 96 }
-           Text{text:"Password:" x: 135 y: 150 }
+
+            Text {
+            text: "VisageFX"
+            fill: PURPLE
+            x: 92
+            y: 37
+            font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 40)
+
+           effect: Glow {
+                    level: 1.0
+                }  
+           }
+
+
+            Label{
+                    text: "Username"                    
+                    wrapText: true                    
+                    textFill: Color.BLACK
+                    layoutX: 127
+                    layoutY: 96                    
+             effect: Glow {
+            level: 1.0
+            }  
+           }
+
+                  
+            Label{
+                    text: "Password"                    
+                    wrapText: true                    
+                    textFill: Color.BLACK
+                    layoutX: 135
+                    layoutY: 150                    
+             effect: Glow {
+            level: 1.0
+            }                      
+                }    
+            TextField{
+                    layoutX: 254
+                    layoutY:90
+                    prefColumnCount:20                    
+                }  
+            TextField{
+                    layoutX: 254
+                    layoutY:150
+                    prefColumnCount:20                    
+                }        
+           /*Text{text:"Username:" x: 127 y: 96 }
+           Text{text:"Password:" x: 135 y: 150 }*/
             Button {
                 text: "Login"
                 layoutX: 236
@@ -44,7 +86,13 @@ Stage {
                 /*layoutX: bind position
                 layoutY: bind 80 + position*/
             }
-
+           ImageView {
+                visage
+                fitWidth: 305
+                preserveRatio: true
+                layoutY: 300
+                layoutX:180
+            }
              ImageView {
                 jugc
                 fitWidth: 150
