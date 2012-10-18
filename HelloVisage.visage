@@ -21,6 +21,8 @@ import visage.lang.Color.*;
     at (10s) {position => 150 tween Interpolator.LINEAR}
 }.play();*/
 
+var uname:TextField ;
+var pword:TextField ;
 Stage {
     title: "Login"
     Scene {
@@ -67,12 +69,12 @@ Stage {
             level: 1.0
             }                      
                 }    
-            TextField{
+            uname=TextField{
                     layoutX: 254
                     layoutY:90
                     prefColumnCount:20                    
                 }  
-            TextField{
+            pword=TextField{
                     layoutX: 254
                     layoutY:150
                     prefColumnCount:20                    
@@ -83,6 +85,14 @@ Stage {
                 text: "Login"
                 layoutX: 236
                 layoutY: 200
+                onAction: function(e){
+        println("The button is clicked");
+        if(uname.text !="")
+        {
+            println("Thank u");
+            
+        }
+    }
                 /*layoutX: bind position
                 layoutY: bind 80 + position*/
             }
