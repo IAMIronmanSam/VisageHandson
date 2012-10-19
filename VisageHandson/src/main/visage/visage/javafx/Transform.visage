@@ -1,0 +1,92 @@
+package visage.javafx;
+
+import visage.javafx.stage.Stage;
+import visage.javafx.scene.Group;
+import visage.javafx.scene.text.*;
+import visage.javafx.scene.Scene;
+import visage.javafx.scene.effect.*;
+import visage.javafx.scene.control.*;
+import visage.lang.Color.*;
+import visage.javafx.scene.shape.*;
+import visage.javafx.scene.transform.*;
+import visage.javafx.scene.image.Image;
+import visage.javafx.scene.image.ImageView;
+
+Stage{
+    title:'Shapes Of Visage'
+
+        Scene{
+            height:500
+            width:700
+            fill: Color.WHITE
+def jugc = Image { url: "{__DIR__}jugc.png" }
+        Group{[
+
+Text {
+                    text: "Visage Transformation"
+                        fill: BLUE
+                        x: 92
+                        y: 37
+                        font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 40)
+                        
+                    }
+Text {
+                    text: "Visage Rocks"
+                        fill: RED
+                        x: 192
+                        y: 57
+                        font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 40)
+                        transforms: Rotate { angle: 30 }
+                        effect: Glow {
+                    level: 1.0
+                }  
+                    }
+Text {
+                   text: "JUGChennai Rocks"
+                        fill: GREEN
+                        x: 192
+                        y: 70
+                        font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 30)
+                        transforms: Rotate { angle: 60 }
+                        effect: Reflection {
+              bottomOpacity:0.1
+                            fraction:0.80
+                            topOffset:0.0
+                            topOpacity:0.6
+                }  
+                    }
+Text {
+                   text: "Visage - DSL Rock Star!"
+                        fill: GREEN
+                        x: 192
+                        y: 90
+                        font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 30)
+                        transforms: Scale {
+                         pivotX: 150 
+                         pivotY: 170
+                         pivotZ: 250 
+                         x:120
+                         y:150
+                         z:200
+                        }
+                        effect: Bloom {
+                                threshold: 0.6
+                }  
+                    }
+                    ImageView {
+                jugc
+                fitWidth: 150
+                fitHeight:150
+                preserveRatio: true
+                layoutX:340
+                layoutY:290
+                effect: Reflection {
+              bottomOpacity:0.1
+                            fraction:0.80
+                            topOffset:0.0
+                            topOpacity:0.6
+                }  
+            }
+]}
+}
+}
