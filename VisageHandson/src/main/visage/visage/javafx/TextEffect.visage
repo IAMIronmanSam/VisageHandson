@@ -6,11 +6,16 @@ import visage.javafx.scene.text.*;
 import visage.javafx.scene.Scene;
 import visage.javafx.scene.effect.*;
 import visage.javafx.scene.control.*;
+import visage.javafx.scene.layout.*;
 import visage.lang.Color.*;
 
 
 var itext:TextField ;
-/*var otext:Text;*/
+var otext:Label;
+var glowRb:Button;
+var refRb:Button;
+var blendRb:Button;
+var op1:Button;
 Stage{
 	title:'Text Effect'
 
@@ -24,7 +29,7 @@ Stage{
 			Text {
 	                text: "Visage Text Effect's"
                         fill: RED
-                        x: 92
+                        x: 120
                         y: 37
                         font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 40)
                     }
@@ -34,7 +39,8 @@ Stage{
                     textFill: Color.BLACK
                     layoutX: 257
                     layoutY: 96 
-                     font: Font.font("SansSarif", javafx.scene.text.FontWeight.MEDIUM, 15)
+                     font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 15)
+                     //font: Font{name:"SansSarif" size:25 weight: javafx.scene.text.FontWeight.BOLD}
              effect: Glow {
             level: 1.0
             }  
@@ -42,27 +48,98 @@ Stage{
                 itext=TextField{
                     layoutX: 454
                     layoutY:90
-                    prefColumnCount:20                    
+                    prefColumnCount:15
                 } 
                 
-               
-                
-                Button {
+				glowRb = Button{
+						text:"Glow Effect"
+						//selected:true
+					layoutX: 306
+                	layoutY: 180
+                	//setToggleGroup(Group)
+                	onAction: function(e){
+                		if(itext.text !=""){
+                			otext.effect = Glow {
+            				level: 1.0
+                		}
+                		//glowRb.visible= false
+                	}
+                	}
+                	/*else{
+                		otext.text("Please Give a Input")
+                	}*/
+                	
+				}
+				               
+			refRb=Button{
+					text:"Reflection Effect"
+					//selected:true
+					layoutX: 420
+                	layoutY: 180
+                	//setToggleGroup(Group)
+                		onAction: function(e){
+                		if(itext.text !=""){
+                			otext.effect = Reflection {
+                            bottomOpacity:0.1
+                            fraction:0.80
+                            topOffset:0.0
+                            topOpacity:0.6
+						}	  
+					}
+					/*else{
+                		otext.text("Please Give a Input")
+                	}*/
+                	
+				}
+			}
+				blendRb=Button{
+						text:"Blend Effect"
+					//	selected:true
+					layoutX: 560
+                	layoutY: 180
+                //	setToggleGroup(Group)
+                		onAction: function(e){
+                		if(itext.text !=""){
+                			otext.effect = MotionBlur {
+                            angle: 90
+                            radius: 20
+				}  
+			}
+				/*else{
+                		otext.text("Please Give a Input")
+                	}*/
+			}
+		}
+            otext=Label{
+                    text: bind itext.text                   
+                    wrapText: true                    
+                    textFill: Color.GREEN
+                    layoutX: 287
+                    layoutY: 240
+                    font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 40)
+            }
+            	]
+		}
+	}
+}
+      
+                /*Button {
                 text: "Apply"
-                layoutX: 336
-                layoutY: 200
+                layoutX: 386
+                layoutY: 290
                 onAction: function(e){
         println("The button is clicked");
- /*otext=Text{text:"Working" x: 335 y: 300 }*/
+ otext=Text{text:"Working" x: 335 y: 300 }
+
         if(itext.text !="")
         {
             println("Thank u");
            
             
         }
-    }
-}
-Text {
+    }*/
+
+/*Text {
 			text: "Glow Effect"
 			fill: GREEN
 			x: 50
@@ -158,7 +235,7 @@ Text {
                             
                             
 				}  
-		   },*/
+		   },
                         Text {
 			text: "GaussianBlur Effect"
 			fill: PURPLE
@@ -222,12 +299,8 @@ Text {
                             //paint:Color.color(.9, .3, .2)
                             
 				}  
-		   }
+		   }*/
 
 
 
-			]
-
-		}
-	}
-}
+		

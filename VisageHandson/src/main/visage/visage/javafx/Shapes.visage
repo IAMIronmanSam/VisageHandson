@@ -23,16 +23,16 @@ Stage{
 		Group{[
 				Text {
 	                text: "Visage Shapes"
-                        fill: BLUE
-                        x: 92
-                        y: 37
-                        font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 40)
+                    fill: BLUE
+                    x: 92
+                    y: 37
+                    font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 40)
                     }
                 Circle{
                 	layoutX:285
                 	layoutY:173
                 	radius:40
-                        fill:YELLOW
+                    fill:YELLOW
                 }
          
                 Polygon{
