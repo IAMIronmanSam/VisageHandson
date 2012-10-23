@@ -16,7 +16,7 @@ defaultTasks 'runVisage'
 
 visage {
 
-	mainVisageClass='visage.javafx.Transform'
+	mainVisageClass='visage.javafx.LayoutSample'
 	
 }
 

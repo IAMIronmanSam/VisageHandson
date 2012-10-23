@@ -50,12 +50,14 @@ Stage{
                     fill:BROWN
                         
                 }
-                Line
+                Rectangle
                 {
-                    startX:200
-                    startY:300
-                    endX:250
-                    endY:400
+                    arcHeight:20
+                    arcWidth:30
+                    height:200
+                    width:40
+                    x:380
+                    y:230
 
                 }
         ]

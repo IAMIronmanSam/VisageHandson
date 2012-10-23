@@ -12,8 +12,14 @@ import visage.javafx.scene.transform.*;
 import visage.javafx.scene.image.Image;
 import visage.javafx.scene.image.ImageView;
 
+var text1:Text;
+var text2:Text;
+var text3:Text;
+var text4:Text;
+var x=0.0;
+
 Stage{
-    title:'Shapes Of Visage'
+    title:' Visage Transformer'
 
         Scene{
             height:500
@@ -22,7 +28,7 @@ Stage{
 def jugc = Image { url: "{__DIR__}jugc.png" }
         Group{[
 
-Text {
+text1=Text {
                     text: "Visage Transformation"
                         fill: BLUE
                         x: 92
@@ -30,7 +36,7 @@ Text {
                         font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 40)
                         
                     }
-Text {
+text2=Text {
                     text: "Visage Rocks"
                         fill: RED
                         x: 192
@@ -41,7 +47,7 @@ Text {
                     level: 1.0
                 }  
                     }
-Text {
+text3=Text {
                    text: "JUGChennai Rocks"
                         fill: GREEN
                         x: 192
@@ -55,7 +61,7 @@ Text {
                             topOpacity:0.6
                 }  
                     }
-Text {
+text4=Text {
                    text: "Visage - DSL Rock Star!"
                         fill: GREEN
                         x: 192
@@ -64,10 +70,11 @@ Text {
                         transforms: Scale {
                          pivotX: 150 
                          pivotY: 170
-                         pivotZ: 250 
-                         x:120
-                         y:150
-                         z:200
+                         pivotZ: 250
+                         
+                         
+                         /*y:10
+                         z:20*/
                         }
                         effect: Bloom {
                                 threshold: 0.6
@@ -87,6 +94,18 @@ Text {
                             topOpacity:0.6
                 }  
             }
+
+            Button{
+                    text:"Scale Transformation"
+                    //selected:true
+                    layoutX: 200
+                    layoutY: 390
+                    //setToggleGroup(Group)
+                   onAction: function(e){
+                   
+                   
+                }
+                }
 ]}
 }
 }
