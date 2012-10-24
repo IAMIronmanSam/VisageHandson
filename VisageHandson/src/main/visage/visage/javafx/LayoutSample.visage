@@ -14,15 +14,14 @@ Stage {
         height: 600
         fill: Color.WHITE
         
-        HBox {
-            40
-            children: [
+        StackPane {
+                        children: [
            Text{text:"Visage " }
            Text{text:"DSL Rockstar" }
 
             
         VBox {
-            50
+            
             children: [
             Text{text:"                            " }
             Text{text:"JUG Chennai " }
