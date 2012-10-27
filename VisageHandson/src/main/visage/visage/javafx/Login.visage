@@ -1,29 +1,26 @@
 package visage.javafx;
 
-import visage.animation.Interpolator;
-import visage.animation.Timeline;
-import visage.javafx.geometry.Rectangle2D;
+
 import visage.javafx.stage.Stage;
 import visage.javafx.scene.Group;
 import visage.javafx.scene.Scene;
-import visage.javafx.scene.layout.*;
 import visage.javafx.scene.effect.*;
+import visage.javafx.scene.layout.*;
 import visage.javafx.scene.control.Button;
 import visage.javafx.scene.control.Label;
 import visage.javafx.scene.control.TextField;
 import visage.javafx.scene.image.Image;
 import visage.javafx.scene.image.ImageView;
 import visage.javafx.scene.text.*;
-import visage.javafx.scene.shape.Rectangle;
 import visage.lang.Color.*;
-//var position = 100;
-
-/*Timeline {
-    at (10s) {position => 150 tween Interpolator.LINEAR}
-}.play();*/
+import java.lang.System;
 
 var uname:TextField ;
 var pword:TextField ;
+var status:Label;
+var username:TilePane;
+var password:TilePane;
+var button:TilePane;
 Stage {
     title: "Login"
     Scene {
@@ -40,8 +37,7 @@ Stage {
             Text {
             text: "VisageFX"
             fill: PURPLE
-            /*x: 92
-            y: 37*/
+            
             font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 40)
 
            effect: Glow {
@@ -49,73 +45,91 @@ Stage {
                 }  
            }
 
-
+        username=TilePane{
+            
+            children:
+            [
             Label{
                     text: "Username"                    
                     wrapText: true                    
                     textFill: Color.BLACK
-                   /* layoutX: 127
-                    layoutY: 96 */
+                
              effect: Glow {
             level: 1.0
             }  
            }
 
            uname=TextField{
-                    /*layoutX: 254
-                    layoutY:90*/
-                    prefColumnCount:8                    
-                    
-                }  
-                  
+                prefColumnCount:5                    
+                }
+
+                ]}  
+             password=TilePane{
+            
+            children:
+            [     
             Label{
                     text: "Password"                    
                     wrapText: true                    
                     textFill: Color.BLACK
-                    /*layoutX: 135
-                    layoutY: 150 */
+                    
              effect: Glow {
             level: 1.0
             }                      
                 }    
             
             pword=TextField{
-                    /*layoutX: 254
-                    layoutY:150*/
-                    prefColumnCount:8 
+                    prefColumnCount:5
                     
-                }        
-           /*Text{text:"Username:" x: 127 y: 96 }
-           Text{text:"Password:" x: 135 y: 150 }*/
+                }]
+            }        
+           
+button=TilePane{
+            
+            children:
+            [     
             Button {
                 text: "Login"
-                /*layoutX: 236
-                layoutY: 200*/
                 onAction: function(e){
         println("The button is clicked");
         if(uname.text !="")
         {
             println("Thank u");
-            
+            status.visible=true
+
         }
-    }
-                /*layoutX: bind position
-                layoutY: bind 80 + position*/
+    }         
             }
+            
+            
+            Button {
+                text: "Exit"
+                onAction: function(e){
+                System.exit(0)
+            }   
+            }
+            ]
+        }
+            status=Label{
+                    text: "Your Are Logged In"                    
+                    wrapText: true                    
+                    textFill: Color.BLACK
+                    font: Font.font("SansSarif", javafx.scene.text.FontWeight.BOLD, 30)
+                    visible:false   
+             effect: Glow {level: 1.0}                      
+                }
+
            ImageView {
                 visage
                 fitWidth: 305
                 preserveRatio: true
-                /*layoutY: 300
-                layoutX:180*/
             }
              ImageView {
                 jugc
                 fitWidth: 150
                 fitHeight:150
                 preserveRatio: true
-                /*layoutY:240*/
-            }
+                }
             
             ]
         }

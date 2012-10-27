@@ -13,6 +13,7 @@ Stage {
         width: 800
         height: 600
         fill: Color.WHITE
+        //getStylesheets().add("/style.css")
         
         StackPane {
                         children: [
